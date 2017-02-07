@@ -1,7 +1,7 @@
-%h1 Rubble Robbers
-%p This is where the signup information for this game goes.
+%h1= t('site_name')
+%p= t('site_description')
 =form_for :user do |f|
   = f.label :email
   = f.text_field :email
-  = f.submit
+  = f.submit t('sign_up_button')
 
