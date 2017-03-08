@@ -6,8 +6,9 @@
   =f.text_field :text
   =f.label :img_url
   =f.text_field :img_url
-  =f.label :parent_id
-  =f.text_field :parent_id
+  =f.select :parent_id do
+    - @nodes.each do |node|
+      = content_tag(:option, node.name, value: node.id)
   =f.submit
 
 %h2 Nodes
