@@ -1,0 +1,12 @@
+%h2 Nodes
+%ul
+- @nodes.each do |node|
+  %li.no--list
+    %h3= node.name
+    = node.text
+    = node.img_url
+    - if node.children.any?
+      %ul
+        - node.children.each do |child|
+          %li= child.name
+    %hr
