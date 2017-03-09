@@ -16,7 +16,7 @@
 - @nodes.each do |node|
   %li.no--list
     %h3= link_to node.name, edit_node_path(node.id)
-    = node.text
+    = markdown(node.text)
     = node.img_url
     - if node.children.any?
       %ul
