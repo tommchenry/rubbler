@@ -15,11 +15,11 @@
 %ul
 - @nodes.each do |node|
   %li.no--list
-    %h3= node.name
+    %h3= link_to node.name, edit_node_path(node.id)
     = node.text
     = node.img_url
     - if node.children.any?
       %ul
         - node.children.each do |child|
-          %li= child.name
+          %li= link_to child.name, edit_node_path(child.id)
     %hr

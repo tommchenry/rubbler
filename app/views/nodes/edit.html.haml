@@ -1,0 +1,12 @@
+%h2 Edit Node
+= form_for @node do |f|
+  =f.label :name
+  =f.text_field :name
+  =f.label :text
+  =f.text_field :text
+  =f.label :img_url
+  =f.text_field :img_url
+  =f.select :parent_id do
+    - @nodes.each do |node|
+      = content_tag(:option, node.name, value: node.id)
+  =f.submit

@@ -14,6 +14,22 @@ class NodesController < ApplicationController
     redirect_to '/nodes'
   end
 
+  def show
+
+  end
+
+  def edit
+    @nodes = Node.all
+    @node = Node.find(params[:id])
+  end
+
+  def update
+    @node = Node.find(params[:id])
+    @node.update_attributes(node_params)
+    flash[:success] = "Node Updated!"
+    redirect_to '/nodes'
+  end
+
 
   private
 
